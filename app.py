@@ -140,14 +140,5 @@ async def clearkeys(interaction: discord.Interaction):
 
 threading.Thread(target=run_flask, daemon=True).start()
 bot.run(BOT_TOKEN)
-```
 
----
 
-**Como usar:**
-```
-/createkey 7d    → 7 dias
-/createkey 30d   → 30 dias
-/createkey 3m    → 3 meses
-/createkey 1a    → 1 ano
-/createkey 2a    → 2 anos
