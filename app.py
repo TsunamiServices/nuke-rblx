@@ -7,8 +7,8 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-ADMIN_ROLE_ID = int(os.environ.get("ADMIN_ROLE_ID", 0))
-BOT_TOKEN = os.environ.get("BOT_TOKEN")
+ADMIN_ROLE_ID = int(os.environ.get("1473430001377611992", 0))
+BOT_TOKEN = os.environ.get("MTQ3MzMyODMwMjM3MzYwNTUyOQ.G0IT_H.NEkHmvrN3j5YM7gxETS12AATaUhFanCBfTuCoM")
 
 app = Flask(__name__)
 
@@ -136,3 +136,4 @@ async def clearkeys(interaction: discord.Interaction):
 
 threading.Thread(target=run_flask, daemon=True).start()
 bot.run(BOT_TOKEN)
+
