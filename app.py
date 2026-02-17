@@ -3,16 +3,20 @@ from discord import app_commands
 from flask import Flask, jsonify
 import json, random, string, threading, os
 from datetime import datetime, timedelta
+from dotenv import load_dotenv
 
-ADMIN_ROLE_ID = 1467560515101392998
-BOT_TOKEN = "MTQ3MzMyODMwMjM3MzYwNTUyOQ.GOGwoE.bc4oowJ4nByA_PsbruvL_tmZN5m-PUzSkyVLLQ"
+load_dotenv()
+
+ADMIN_ROLE_ID = int(os.environ.get("ADMIN_ROLE_ID", 0))
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 
 app = Flask(__name__)
 
 def load_keys():
     try:
         with open("keys.json", "r") as f:
-            return json.load(f)
+            data = json.load(f)
+            return data if isinstance(data, dict) else {}
     except:
         return {}
 
