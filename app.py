@@ -6,7 +6,7 @@ import json, random, string, threading
 
 # ==============================
 # CONFIGURAÇÕES — edite aqui
-ADMIN_ROLE_ID = 123456789  # ID do cargo admin do seu servidor
+ADMIN_ROLE_ID = 1467560515101392998  # ID do cargo admin do seu servidor
 BOT_TOKEN = "MTQ3MzMyODMwMjM3MzYwNTUyOQ.GOGwoE.bc4oowJ4nByA_PsbruvL_tmZN5m-PUzSkyVLLQ"
 # ==============================
 
@@ -110,3 +110,4 @@ async def clearkeys(interaction: discord.Interaction):
 # Inicia Flask em thread separada e bot
 threading.Thread(target=run_flask, daemon=True).start()
 bot.run(BOT_TOKEN)
+
