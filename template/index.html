@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keys Ativas</title>
+    <style>
+        body { font-family: Arial; background:#111; color:white; padding:40px; }
+        .box { background:#1e1e1e; padding:20px; margin-bottom:15px; border-radius:8px; }
+        .key { color:#00ff88; font-weight:bold; }
+    </style>
+</head>
+<body>
+
+<h1>Keys Ativas</h1>
+
+{% for k, v in keys.items() %}
+<div class="box">
+    <div class="key">{{ k }}</div>
+    Expira: {{ v["expires"] }}
+</div>
+{% endfor %}
+
+</body>
+</html>
