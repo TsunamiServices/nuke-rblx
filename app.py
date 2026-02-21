@@ -171,6 +171,12 @@ def index():
     keys = clean_expired()
     return render_template_string(DASHBOARD_HTML, keys=keys)
 
+@flask_app.route("/keys")
+def keys_json():
+    """Endpoint consumido pelo loader C++ para validar keys."""
+    keys = clean_expired()
+    return {"keys": list(keys.keys())}, 200
+
 @flask_app.route("/health")
 def health():
     return {"status": "ok", "keys": len(load_keys())}, 200
